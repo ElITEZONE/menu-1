@@ -1,0 +1,8 @@
+@import url('module/vars.css');
+@import url('module/reboot.css');
+@import url('module/menu-toggler.css');
+@import url('module/menu.css');
+
+body {
+    background: #EBE8EF;
+}
