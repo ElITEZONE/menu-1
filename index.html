@@ -1,85 +1,166 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="app/index.css">
-</head>
-<body>
-    <div id="root">
-        <div class="menu-toggler">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
+<div class="particles">	
+	<canvas></canvas>
+	<div>Текст в центре блока</div>
+</div>
 
+<style>
+.particles {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.particles div {
+    position: absolute;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 40px;
+    color: #FFF;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    animation: neon-1 .1s ease-in-out infinite alternate;
+}
+@keyframes neon-1 {
+    from {
+        text-shadow: 0 0 6px rgba(202, 228, 225, 0.92), 0 0 30px rgba(202, 228, 225, 0.34), 0 0 12px rgba(191, 226, 255, 0.52), 0 0 21px rgba(191, 226, 255, 0.92), 0 0 34px rgba(191, 226, 255, 0.78), 0 0 54px rgba(191, 226, 255, 0.92);
+    }
+    to {
+        text-shadow: 0 0 6px rgba(202, 228, 225, 0.98), 0 0 30px rgba(202, 228, 225, 0.42), 0 0 12px rgba(191, 226, 255, 0.58), 0 0 22px rgba(191, 226, 255, 0.84), 0 0 38px rgba(191, 226, 255, 0.88), 0 0 60px #FFF;
+    }
+}
+.particles canvas {
+    width: 100%;
+    height: 500px;
+    background-image: url('background.jpg');
+    background-position: center center;
+    background-size: cover;
+}
+</style>
 
-    <div class="menu">
-        <ul class="menu-list">
-            <li class="menu-item active">
-                <a href="#" class="menu-link">
-                    <span class="menu-link-icon">
-                        <svg width="22" height="22" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.40155 1.22003C10.3577 0.537031 11.6422 0.537008 12.5984 1.21997L19.7612 6.33605C21.0095 7.22767 21.7504 8.66728 21.7504 10.2013V18C21.7504 20.071 20.0714 21.75 18.0004 21.75H15.1428C13.624 21.75 12.3928 20.5187 12.3928 19V17.5C12.3928 17.0857 12.057 16.75 11.6428 16.75H10.3571C9.94288 16.75 9.60709 17.0857 9.60709 17.5V19C9.60709 20.5187 8.37587 21.75 6.85709 21.75H4.00037C1.9293 21.75 0.250366 20.071 0.250366 18V10.2012C0.250366 8.66725 0.991171 7.22769 2.23941 6.33606L9.40155 1.22003ZM11.7265 2.44058C11.2919 2.13015 10.708 2.13016 10.2734 2.44061L3.11129 7.55664C2.25723 8.16671 1.75037 9.15167 1.75037 10.2012V18C1.75037 19.2426 2.75773 20.25 4.00037 20.25H6.85709C7.54745 20.25 8.10709 19.6903 8.10709 19V17.5C8.10709 16.2573 9.11445 15.25 10.3571 15.25H11.6428C12.8854 15.25 13.8928 16.2573 13.8928 17.5V19C13.8928 19.6903 14.4524 20.25 15.1428 20.25H18.0004C19.243 20.25 20.2504 19.2426 20.2504 18V10.2013C20.2504 9.15172 19.7435 8.16672 18.8893 7.55666L11.7265 2.44058Z"/>
-                        </svg>
-                    </span>
-                    <span class="menu-link-text">Home</span>
-                </a>
-            </li>
-            <li class="menu-item">
-                <a href="#" class="menu-link">
-                    <span class="menu-link-icon">
-                        <svg width="22" height="22" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.25 4C0.25 1.92893 1.92893 0.25 4 0.25H6.57143C8.6425 0.25 10.3214 1.92893 10.3214 4V6.57143C10.3214 8.6425 8.6425 10.3214 6.57143 10.3214H4C1.92893 10.3214 0.25 8.6425 0.25 6.57143V4ZM4 1.75C2.75736 1.75 1.75 2.75736 1.75 4V6.57143C1.75 7.81407 2.75736 8.82143 4 8.82143H6.57143C7.81407 8.82143 8.82143 7.81407 8.82143 6.57143V4C8.82143 2.75736 7.81407 1.75 6.57143 1.75H4Z"/>
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.6786 4C11.6786 1.92893 13.3575 0.25 15.4286 0.25H18C20.0711 0.25 21.75 1.92893 21.75 4V6.57143C21.75 8.6425 20.0711 10.3214 18 10.3214H15.4286C13.3575 10.3214 11.6786 8.6425 11.6786 6.57143V4ZM15.4286 1.75C14.1859 1.75 13.1786 2.75736 13.1786 4V6.57143C13.1786 7.81407 14.1859 8.82143 15.4286 8.82143H18C19.2427 8.82143 20.25 7.81407 20.25 6.57143V4C20.25 2.75736 19.2427 1.75 18 1.75H15.4286Z"/>
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.6786 15.4286C11.6786 13.3575 13.3575 11.6786 15.4286 11.6786H18C20.0711 11.6786 21.75 13.3575 21.75 15.4286V18C21.75 20.0711 20.0711 21.75 18 21.75H15.4286C13.3575 21.75 11.6786 20.0711 11.6786 18V15.4286ZM15.4286 13.1786C14.1859 13.1786 13.1786 14.1859 13.1786 15.4286V18C13.1786 19.2427 14.1859 20.25 15.4286 20.25H18C19.2427 20.25 20.25 19.2427 20.25 18V15.4286C20.25 14.1859 19.2427 13.1786 18 13.1786H15.4286Z"/>
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.25 15.4286C0.25 13.3575 1.92893 11.6786 4 11.6786H6.57143C8.6425 11.6786 10.3214 13.3575 10.3214 15.4286V18C10.3214 20.0711 8.6425 21.75 6.57143 21.75H4C1.92893 21.75 0.25 20.0711 0.25 18V15.4286ZM4 13.1786C2.75736 13.1786 1.75 14.1859 1.75 15.4286V18C1.75 19.2427 2.75736 20.25 4 20.25H6.57143C7.81407 20.25 8.82143 19.2427 8.82143 18V15.4286C8.82143 14.1859 7.81407 13.1786 6.57143 13.1786H4Z"/>
-                        </svg>
-                    </span>
-                    <span class="menu-link-text">About</span>
-                </a>
-            </li>
-            <li class="menu-item">
-                <a href="#" class="menu-link">
-                    <span class="menu-link-icon">
-                        <svg width="22" height="22" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M4.25 4C4.25 1.92893 5.92893 0.25 8 0.25H18C20.0711 0.25 21.75 1.92893 21.75 4V9C21.75 11.0711 20.0711 12.75 18 12.75H17.5C16.8096 12.75 16.25 12.1904 16.25 11.5V7.5C16.25 6.5335 15.4665 5.75 14.5 5.75H6C5.0335 5.75 4.25 4.9665 4.25 4ZM8 1.75C6.75736 1.75 5.75 2.75736 5.75 4C5.75 4.13807 5.86193 4.25 6 4.25H14.5C16.2949 4.25 17.75 5.70507 17.75 7.5V11.25H18C19.2426 11.25 20.25 10.2426 20.25 9V4C20.25 2.75736 19.2426 1.75 18 1.75H8Z"/>
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.25 8C0.25 5.92893 1.92893 4.25 4 4.25H14C16.0711 4.25 17.75 5.92893 17.75 8V13.3333C17.75 15.4044 16.0711 17.0833 14 17.0833H10.475L6.57538 21.3801C5.76508 22.273 4.28509 21.6143 4.40606 20.4147L4.74199 17.0833H4C1.92893 17.0833 0.25 15.4044 0.25 13.3333V8ZM4 5.75C2.75736 5.75 1.75 6.75736 1.75 8V13.3333C1.75 14.576 2.75736 15.5833 4 15.5833H5.01847C5.75842 15.5833 6.3364 16.2225 6.26217 16.9587L5.97463 19.8101L9.43866 15.9933C9.67559 15.7322 10.0117 15.5833 10.3643 15.5833H14C15.2426 15.5833 16.25 14.576 16.25 13.3333V8C16.25 6.75736 15.2426 5.75 14 5.75H4Z"/>
-                        </svg>
-                    </span>
-                    <span class="menu-link-text">Messages</span>
-                </a>
-            </li>
-            <li class="menu-item">
-                <a href="#" class="menu-link">
-                    <span class="menu-link-icon">
-                        <svg width="22" height="21" viewBox="0 0 22 21" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.25 11C0.25 8.37665 2.37665 6.25 5 6.25H17C19.6234 6.25 21.75 8.37665 21.75 11V16C21.75 18.6234 19.6234 20.75 17 20.75H5C2.37665 20.75 0.25 18.6234 0.25 16V11ZM5 7.75C3.20507 7.75 1.75 9.20507 1.75 11V16C1.75 17.7949 3.20507 19.25 5 19.25H17C18.7949 19.25 20.25 17.7949 20.25 16V11C20.25 9.20507 18.7949 7.75 17 7.75H5Z"/>
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.25 4C6.25 1.92893 7.92893 0.25 10 0.25H12C14.0711 0.25 15.75 1.92893 15.75 4V7.75H6.25V4ZM10 1.75C8.75736 1.75 7.75 2.75736 7.75 4V6.25H14.25V4C14.25 2.75736 13.2426 1.75 12 1.75H10Z"/>
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M7 10.25C7.41421 10.25 7.75 10.5858 7.75 11V16C7.75 16.4142 7.41421 16.75 7 16.75C6.58579 16.75 6.25 16.4142 6.25 16V11C6.25 10.5858 6.58579 10.25 7 10.25Z"/>
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M15 10.25C15.4142 10.25 15.75 10.5858 15.75 11V16C15.75 16.4142 15.4142 16.75 15 16.75C14.5858 16.75 14.25 16.4142 14.25 16V11C14.25 10.5858 14.5858 10.25 15 10.25Z"/>
-                        </svg>
-                    </span>
-                    <span class="menu-link-text">Photos</span>
-                </a>
-            </li>
-            <li class="menu-item">
-                <a href="#" class="menu-link">
-                    <span class="menu-link-icon">
-                        <svg width="22" height="22" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.40058 1.75392C10.0162 0.367506 11.9838 0.367512 12.5994 1.75392L13.6569 4.13549C13.711 4.25721 13.8509 4.31519 13.9752 4.26734L16.407 3.33108C17.8226 2.78604 19.2139 4.17735 18.6689 5.59299L17.7327 8.02477C17.6848 8.14906 17.7428 8.28904 17.8645 8.34308L20.2461 9.40058C21.6325 10.0162 21.6325 11.9838 20.2461 12.5994L17.8645 13.6569C17.7428 13.711 17.6848 13.8509 17.7327 13.9752L18.6689 16.407C19.214 17.8226 17.8226 19.2139 16.407 18.6689L13.9752 17.7327C13.8509 17.6848 13.711 17.7428 13.6569 17.8645L12.5994 20.2461C11.9838 21.6325 10.0162 21.6325 9.40058 20.2461L8.34308 17.8645C8.28904 17.7428 8.14906 17.6848 8.02477 17.7327L5.59299 18.6689C4.17734 19.214 2.78604 17.8226 3.33108 16.407L4.26734 13.9752C4.31519 13.8509 4.25721 13.711 4.13549 13.6569L1.75392 12.5994C0.367506 11.9838 0.367512 10.0162 1.75392 9.40058L4.13549 8.34308C4.25721 8.28904 4.31519 8.14906 4.26734 8.02477L3.33108 5.59299C2.78604 4.17735 4.17734 2.78604 5.59299 3.33108L8.02477 4.26734C8.14906 4.31519 8.28904 4.25721 8.34308 4.13549L9.40058 1.75392ZM11.2285 2.36266C11.1405 2.1646 10.8595 2.1646 10.7715 2.36265L9.71401 4.74422C9.33568 5.59626 8.35582 6.00213 7.48582 5.66717L5.05404 4.73091C4.85181 4.65305 4.65305 4.8518 4.73091 5.05404L5.66717 7.48582C6.00213 8.35582 5.59626 9.33568 4.74422 9.71401L2.36266 10.7715C2.1646 10.8595 2.1646 11.1405 2.36265 11.2285L4.74422 12.286C5.59626 12.6643 6.00213 13.6442 5.66717 14.5142L4.73091 16.9459C4.65305 17.1482 4.85181 17.3469 5.05404 17.2691L7.48582 16.3328C8.35582 15.9979 9.33568 16.4037 9.71401 17.2558L10.7715 19.6373C10.8595 19.8354 11.1405 19.8354 11.2285 19.6373L12.286 17.2558C12.6643 16.4037 13.6442 15.9979 14.5142 16.3328L16.9459 17.2691C17.1482 17.3469 17.3469 17.1482 17.2691 16.946L16.3328 14.5142C15.9979 13.6442 16.4037 12.6643 17.2558 12.286L19.6373 11.2285C19.8354 11.1405 19.8354 10.8595 19.6373 10.7715L17.2558 9.71401C16.4037 9.33568 15.9979 8.35583 16.3328 7.48582L17.2691 5.05404C17.3469 4.8518 17.1482 4.65305 16.946 4.73091L14.5142 5.66717C13.6442 6.00213 12.6643 5.59626 12.286 4.74422L11.2285 2.36266Z"/>
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11 9C9.89543 9 9 9.89543 9 11C9 12.1046 9.89543 13 11 13C12.1046 13 13 12.1046 13 11C13 9.89543 12.1046 9 11 9ZM7.5 11C7.5 9.067 9.067 7.5 11 7.5C12.933 7.5 14.5 9.067 14.5 11C14.5 12.933 12.933 14.5 11 14.5C9.067 14.5 7.5 12.933 7.5 11Z"/>
-                        </svg>                            
-                    </span>
-                    <span class="menu-link-text">Settings</span>
-                </a>
-            </li>
-        </ul>
-    </div>
-
-    <script src="app/index.js" type="module"></script>
-</body>
-</html>
+<script>
+const canvas = document.querySelector('canvas');
+const ctx = canvas.getContext('2d');
+const RESOLUTION = 1;
+let w = canvas.width = canvas.offsetWidth * RESOLUTION;
+let h = canvas.height = canvas.offsetHeight * RESOLUTION;
+const PARTICLE_COUNT = 400;
+const CONNECT_DISTANCE = w * 0.06;
+const FORCE_DISTANCE = w * 0.2;
+const r = (n = 1) => Math.random() * n;
+const PI = Math.PI;
+const TAU = PI * 2;
+let time = new Date;
+const lerp = (start, end, amt) => {
+    return (1-amt)*start+amt*end
+};
+const distance = (x1, y1, x2, y2) => {
+    const a = x1 - x2;
+    const b = y1 - y2;
+    return Math.sqrt( a*a + b*b );
+};
+const angle = (cx, cy, ex, ey) => {
+    return Math.atan2(ey - cy, ex - cx);
+};
+const particlePrototype = () => ({
+    x: w * 0.5 + (Math.cos(r(TAU)) * r(w* 0.5)),
+    y: h * 0.5 + (Math.sin(r(TAU)) * r(h* 0.5)),
+    angle: r(TAU),
+    speed: r(0.15),
+    normalSpeed: r(0.15),
+    oscAmplitudeX: r(2),
+    oscSpeedX: 0.001 + r(0.008),
+    oscAmplitudeY: r(2),
+    oscSpeedY: 0.001 + (r(0.008)),
+    connectDistance: r(CONNECT_DISTANCE),
+    color: {
+        r: Math.round(200 + r(55)),
+        g: Math.round(150 + r(105)),
+        b: Math.round(200 + r(55))
+    }
+});
+const particles = (new Array(PARTICLE_COUNT))
+.fill({})
+.map(particlePrototype);
+const update = () => {
+    particles.forEach(p1 => {
+        p1.x += (Math.cos(p1.angle) + (Math.cos(time * p1.oscSpeedX) * p1.oscAmplitudeX)) * p1.speed;
+        p1.y += (Math.sin(p1.angle) + (Math.cos(time * p1.oscSpeedY) * p1.oscAmplitudeY)) * p1.speed; 
+        p1.speed = lerp(p1.speed, p1.normalSpeed * RESOLUTION, 0.1);   
+        if (p1.x > w || p1.x < 0) {
+            p1.angle = PI - p1.angle;
+        }
+        if (p1.y > h || p1.y < 0) {
+            p1.angle = -p1.angle;
+        }        
+        if (r() < 0.005) 
+        p1.oscAmplitudeX = r(2);
+        if (r() < 0.005) 
+        p1.oscSpeedX = 0.001 + (r(0.008));
+        if (r() < 0.005) 
+        p1.oscAmplitudeY = r(2);
+        if (r() < 0.005) 
+        p1.oscSpeedY = 0.001 + r(0.008);
+        
+        p1.x = Math.max(-0.01,Math.min(p1.x, w + 0.01));
+        p1.y = Math.max(-0.01,Math.min(p1.y, h + 0.01));
+    });
+};
+const render = () => { 
+    ctx.clearRect(0,0,w,h);    
+    particles.map(p1 => {
+        particles
+        .filter(p2 => {
+            if (p1 == p2)
+            return false;
+            if (distance(p1.x, p1.y, p2.x, p2.y) > p1.connectDistance)
+            return false;
+            return true;
+        })
+        .map(p2 => {
+            const dist = distance(p1.x, p1.y, p2.x, p2.y);
+            p1.speed = lerp(p1.speed, p1.speed + (0.05 / p1.connectDistance * dist), 0.2);
+            return {
+                p1,
+                p2,
+                color: p1.color,
+                opacity: Math.floor(100 / p1.connectDistance * (p1.connectDistance - dist)) / 100
+            };
+        })
+        .forEach((line, i) => {
+            const colorSwing = Math.sin(time * (line.p1.oscSpeedX));
+            ctx.beginPath();
+            ctx.globalAlpha = line.opacity;
+            ctx.moveTo(line.p1.x, line.p1.y);
+            ctx.lineTo(line.p2.x, line.p2.y);
+            ctx.strokeStyle = `rgb(
+            ${Math.floor(line.color.r * colorSwing)},
+            ${Math.floor((line.color.g * 0.5) + ((line.color.g * 0.5) * colorSwing))},
+            ${line.color.b}
+            )`
+            ctx.lineWidth = (line.opacity * 4);
+            ctx.stroke();
+            ctx.closePath();
+        });
+    });
+};
+const loop = () => {
+    time = new Date;
+    update();
+    render();
+    window.requestAnimationFrame(loop);
+};
+loop();
+window.addEventListener('mousemove', e => {
+  const mouseX = (e.clientX - canvas.getBoundingClientRect().left) * RESOLUTION;
+  const mouseY = (e.clientY - canvas.getBoundingClientRect().top) * RESOLUTION;
+  particles.forEach(p => {
+    const dist = distance(mouseX, mouseY, p.x, p.y);  
+    if (dist < FORCE_DISTANCE && dist > 0) {
+      p.angle = angle(mouseX, mouseY, p.x, p.y)
+      const force = (FORCE_DISTANCE - dist) * 0.1;
+      p.speed = lerp(p.speed, force, 0.2);
+    }
+  });    
+});
+</script>
